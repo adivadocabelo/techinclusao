@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Diferença entre HTTP e HTTPS com animação em CSS">
+    <title>Diferença entre HTTP e HTTPS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            max-width: 900px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #444;
+        }
+
+        .comparison {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .box {
+            width: 200px;
+            padding: 15px;
+            border: 2px solid #333;
+            text-align: center;
+            background-color: #e6e6e6;
+        }
+
+        .http {
+            background-color: #f5a9a9;
+        }
+
+        .https {
+            background-color: #a9d0f5;
+        }
+
+        .description {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        /* Animação */
+
+        .animation-container {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            width: 500px;
+            position: relative;
+        }
+
+        .data {
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border-radius: 50%;
+            position: absolute;
+            animation: moveData 5s linear infinite;
+        }
+
+        .path {
+            width: 200px;
+            height: 50px;
+            background-color: #f5a9a9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #fff;
+            border-radius: 25px;
+            position: relative;
+        }
+
+        .path.secure {
+            background-color: #a9d0f5;
+        }
+
+        @keyframes moveData {
+            0% { left: 0; }
+            50% { left: 230px; }
+            100% { left: 0; }
+        }
+
+        .label {
+            position: absolute;
+            top: 60px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HTTP vs HTTPS</h1>
+
+    <div class="container">
+        <h2>Diferença entre HTTP e HTTPS</h2>
+        <div class="comparison">
+            <div class="box http">
+                <h3>HTTP</h3>
+                <p>Conexão não segura</p>
+            </div>
+            <div class="box https">
+                <h3>HTTPS</h3>
+                <p>Conexão segura com criptografia</p>
+            </div>
+        </div>
+
+        <div class="description">
+            <p><strong>HTTP (HyperText Transfer Protocol)</strong> é um protocolo de comunicação utilizado para transmitir dados entre um cliente (navegador) e um servidor. No entanto, ele não possui criptografia, o que significa que os dados enviados podem ser interceptados por terceiros.</p>
+            <p><strong>HTTPS (HyperText Transfer Protocol Secure)</strong> é a versão segura do HTTP. Ele usa criptografia SSL/TLS para garantir que os dados transmitidos entre o cliente e o servidor estejam protegidos contra interceptação.</p>
+        </div>
+
+        <!-- Animação -->
+        <div class="animation-container">
+            <div class="path">HTTP</div>
+            <div class="path secure">HTTPS</div>
+            <div class="data"></div>
+        </div>
+        <div class="label">
+            <p>O HTTPS mantém os dados seguros durante a transmissão</p>
+        </div>
+    </div>
+
+</body>
+</html>
