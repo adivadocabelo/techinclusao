@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Diagrama da arquitetura cliente-servidor">
+    <title>Arquitetura Cliente-Servidor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .diagram {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            padding: 40px;
+            border: 2px solid #333;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .arrow {
+            width: 200px;
+            height: 30px;
+            background-color: #333;
+            margin: 20px;
+            position: relative;
+        }
+
+        .arrow::after {
+            content: '';
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-left: 15px solid #333;
+            border-top: 7px solid transparent;
+            border-bottom: 7px solid transparent;
+        }
+
+        .arrow.reverse::after {
+            left: -15px;
+            right: auto;
+            border-left: none;
+            border-right: 15px solid #333;
+        }
+
+        .box {
+            width: 200px;
+            height: 100px;
+            border: 2px solid #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            background-color: #e6e6e6;
+        }
+
+        .client {
+            background-color: #a9d0f5;
+        }
+
+        .server {
+            background-color: #f5a9a9;
+        }
+    </style>
+</head>
+<body>
+    <div class="diagram">
+        <div class="box client">Cliente</div>
+        <div class="arrow"></div>
+        <div class="box server">Servidor</div>
+        <div class="arrow reverse"></div>
+        <div class="box client">Cliente</div>
+    </div>
+</body>
+</html>
